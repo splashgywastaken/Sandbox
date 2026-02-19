@@ -22,3 +22,13 @@ Build using MSVC v145 through Visual Studio
 4. Salt - solid, could be dissolved by water
 5. Fire - burns, can be put out with water
 6. Wood - solid, can be burned by fire
+
+### Showcase
+#### GIF
+
+![Sandbox](https://github.com/user-attachments/assets/51b744c3-5e2b-436a-b73f-4e5a3a7be175)
+
+### Screenshots
+<img width="480" height="480" alt="Sandbox 1" src="https://github.com/user-attachments/assets/06930555-cdb2-4e73-9e4f-dfbcd0b0066a" />
+
+<img width="480" height="480" alt="Sandbox" src="https://github.com/user-attachments/assets/eaf36216-26a4-4764-97b6-ccc40a67dc53" />
