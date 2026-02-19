@@ -368,6 +368,7 @@ element_particle* elements_level::get_element_at(const int& x, const int& y) con
 
 void elements_level::delete_element_at(const int& x, const int& y) const
 {
+	delete elements_->at(compute_idx(x, y));
 	elements_->at(compute_idx(x, y)) = nullptr;
 }
 
