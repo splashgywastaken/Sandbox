@@ -11,10 +11,21 @@
 
 text_renderer::text_renderer(const unsigned int width, const unsigned int height)
 {
+    fs::path current_path = fs::current_path();
+    fs::path vertex_path = current_path / "shaders" / "text_shader_vert.glsl";
+    fs::path fragment_path = current_path / "shaders" / "text_shader_frag.glsl";
+
+    std::cout << "============================================" << std::endl;
+    std::cout << "Text shaders" << std::endl;
+    std::cout << "Working dir: " << current_path << std::endl;
+    std::cout << "Vertex path: " << vertex_path << std::endl;
+    std::cout << "Fragment path: " << fragment_path << std::endl;
+    std::cout << "============================================" << std::endl;
+
     // load and configure shader
     this->text_shader = resource_manager::load_shader(
-        "../shaders/text_shader_vert.glsl",
-        "../shaders/text_shader_frag.glsl",
+        vertex_path.string().c_str(),
+        fragment_path.string().c_str(),
         nullptr,
         "text"
     );

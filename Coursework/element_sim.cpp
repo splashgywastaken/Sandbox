@@ -1,6 +1,7 @@
 #include "element_sim.h"
 
 #include <iostream>
+#include <filesystem>
 #include <GLFW/glfw3.h>
 
 #include "camera.h"
@@ -25,11 +26,22 @@ element_sim::~element_sim() = default;
 
 void element_sim::init()
 {
+    fs::path current_path = fs::current_path();
+    fs::path vertex_path = current_path / "shaders" / "basic_shader_vert.glsl";
+    fs::path fragment_path = current_path / "shaders" / "basic_shader_frag.glsl";
+
+    std::cout << "============================================" << std::endl;
+    std::cout << "Elements shaders" << std::endl;
+    std::cout << "Working dir: " << current_path << std::endl;
+    std::cout << "Vertex path: " << vertex_path << std::endl;
+    std::cout << "Fragment path: " << fragment_path << std::endl;
+    std::cout << "============================================" << std::endl;
+
     // Загрузка шейдеров
     resource_manager::load_shader(
-        "../shaders/basic_shader_vert.glsl",
-        "../shaders/basic_shader_frag.glsl", 
-        nullptr, 
+        vertex_path.string().c_str(),
+        fragment_path.string().c_str(),
+        nullptr,
         "element"
     );
     // Настройка шейдеров
@@ -47,8 +59,15 @@ void element_sim::init()
     renderer_ = new sprite_renderer(resource_manager::get_shader("element"));
 
     // Подгрузка обработчика шрифтов:
+    fs::path font_path = current_path / "Fonts" / "ArcadeClassic.TTF";
+
+    std::cout << "============================================" << std::endl;
+    std::cout << "Font files" << std::endl;
+    std::cout << "Working dir: " << font_path << std::endl;
+    std::cout << "============================================" << std::endl;
+
     text_ = new text_renderer(this->width_, this->height_);
-    text_->load("../Fonts/ArcadeClassic.TTF", 24);
+    text_->load(font_path.string().c_str(), 24);
 
     pressed_keys = new bool[1024]{};
     mouse_buttons = new bool[3] {};

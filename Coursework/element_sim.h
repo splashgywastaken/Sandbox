@@ -4,6 +4,9 @@
 #include "elements_level.h"
 #include "sprite_renderer.h"
 #include "text_renderer.h"
+#include <filesystem>
+
+namespace fs = std::filesystem;
 
 class element_sim
 {

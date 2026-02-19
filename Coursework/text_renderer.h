@@ -3,7 +3,10 @@
 
 #include <map>
 #include <glm/glm.hpp>
+#include <filesystem>
 #include "shader.h"
+
+namespace fs = std::filesystem;
 
 /// Хранит в себе информацию относящуюся к символу, загруженному с помощью FreeType
 struct character {
