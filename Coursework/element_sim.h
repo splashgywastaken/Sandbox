@@ -9,8 +9,8 @@ class element_sim
 {
 	// Поля
 public:
-	bool *pressed_keys;
-	bool* mouse_buttons;
+	bool *pressed_keys = nullptr;
+	bool *mouse_buttons = nullptr;
 private:
 	//Ширина и высота экрана
 	unsigned int width_, height_;
@@ -20,11 +20,11 @@ private:
 	int brush_radius_ = 8;
 	int brush_element_id_ = 1;
 	//Рендерер спрайтов для объектов:
-	sprite_renderer *renderer_;
+	sprite_renderer *renderer_ = nullptr;
 	//Рендерер шрифтов
-	text_renderer* text_;
+	text_renderer* text_ = nullptr;
 	//Объект - игровой уровень
-	elements_level *level_;
+	elements_level *level_ = nullptr;
 
 	// Методы и конструкторы
 public:

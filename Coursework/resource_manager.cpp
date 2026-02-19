@@ -58,7 +58,7 @@ shader resource_manager::load_shader_from_file(
         vertex_code = v_shader_stream.str();
         fragment_code = f_shader_stream.str();
     }
-    catch (std::exception& e)
+    catch (std::exception&)
     {
         std::cout << "ERROR::SHADER: Failed to read shader files" << std::endl;
     }

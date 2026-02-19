@@ -112,11 +112,11 @@ int main(int argc, char* argv[])
         glfwPollEvents();
         // Обработка пользовательского ввода
         // -----------------
-        sandbox->process_input(x_position, y_position);
+        sandbox->process_input(static_cast<int>(x_position), static_cast<int>(y_position));
 
         // Обновление состояния element_sim
         // -----------------
-        sandbox->update(delta_time);
+        sandbox->update(static_cast<float>(delta_time));
 
         // Рендер
         // ------

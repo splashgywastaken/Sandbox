@@ -130,7 +130,12 @@ void element_sim::render(const glm::vec2 mouse_position) const
 	   );
 	}
 
-    level_->circle_bres(mouse_position.x, mouse_position.y, brush_radius_, renderer_);
+    level_->circle_bres(
+        static_cast<int>(mouse_position.x), 
+        static_cast<int>(mouse_position.y), 
+        brush_radius_, 
+        renderer_
+    );
 
 }
 

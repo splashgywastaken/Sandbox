@@ -100,8 +100,9 @@ private:
 	static int get_random_int(const int min = 70, const int max = 100)
 	{
 		static thread_local std::mt19937 generator;
-		const std::uniform_int_distribution<int> distribution(min, max);
-		return distribution(generator);
+		std::uniform_int_distribution<int> distribution(min, max);
+		int random_int = static_cast<int>(distribution(generator));
+		return random_int;
 	}
 
 };

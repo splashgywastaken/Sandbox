@@ -80,8 +80,8 @@ class elements_level
 	// Генератор случайных чисел
 	static int int_rand(const int& min, const int& max) {
 		static thread_local std::mt19937 generator;
-		const std::uniform_int_distribution<int> distribution(min, max);
-		return distribution(generator);
+		std::uniform_int_distribution<int> distribution(min, max);
+		return static_cast<int>(distribution(generator));
 	}
 
 public:
